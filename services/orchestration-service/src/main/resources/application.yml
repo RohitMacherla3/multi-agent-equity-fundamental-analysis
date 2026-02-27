@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: analysis-orchestrator-service
+
+server:
+  port: ${SERVER_PORT:8081}
+
+orchestrator:
+  ingestion-base-url: ${INGESTION_BASE_URL:http://localhost:8080}
+  indexing-base-url: ${INDEXING_BASE_URL:http://localhost:8002}
+  ai-base-url: ${AI_BASE_URL:http://localhost:8000}
+  default-top-k: ${ORCHESTRATOR_DEFAULT_TOP_K:5}

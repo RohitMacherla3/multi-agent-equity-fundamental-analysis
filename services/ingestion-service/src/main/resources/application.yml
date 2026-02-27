@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: filings-ingestion-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/ifip}
+    username: ${DB_USERNAME:ifip}
+    password: ${DB_PASSWORD:ifip}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: ${SERVER_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+ingestion:
+  user-agent: ${SEC_USER_AGENT:IFIPResearchBot/1.0 (rohitmacherla125@gmail.com)}
+  scheduler-enabled: ${INGESTION_SCHEDULER_ENABLED:false}
+  scheduler-fixed-delay-ms: ${INGESTION_SCHEDULER_DELAY_MS:3600000}
+  default-ciks:
+    - "0000886982"
+    - "0000789019"
+    - "0001045810"
+  default-max-per-cik: ${INGESTION_DEFAULT_MAX_PER_CIK:25}
+  default-include-documents: ${INGESTION_DEFAULT_INCLUDE_DOCUMENTS:true}
+  raw-storage-path: ${INGESTION_RAW_STORAGE_PATH:data/raw-filings}
+  sec-data-max-in-memory-mb: ${SEC_DATA_MAX_IN_MEMORY_MB:16}
+  sec-archive-max-in-memory-mb: ${SEC_ARCHIVE_MAX_IN_MEMORY_MB:25}

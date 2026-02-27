@@ -27,4 +27,6 @@ services/**/build/
 services/**/__pycache__/
 **/.gradle/
 **/.idea/
-*.DS_Store
+backup/*
+.DS_Store
+.DS_Store

@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:${INGESTION_H2_PATH:./data/ifip_local};MODE=PostgreSQL;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  flyway:
+    enabled: false
+
+ingestion:
+  scheduler-enabled: false
+  raw-storage-path: ${INGESTION_RAW_STORAGE_PATH:data/raw-filings}
