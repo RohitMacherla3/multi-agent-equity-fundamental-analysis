@@ -3,7 +3,7 @@
 services/ai-research-team-service/.env
 
 # Runtime data
-data/
+data/chroma/*
 services/*/data/
 *.db
 *.sqlite3
@@ -27,6 +27,4 @@ services/**/build/
 services/**/__pycache__/
 **/.gradle/
 **/.idea/
-
-# Local backup / archive
-backup/
+*.DS_Store
