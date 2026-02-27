@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430">
+<rect width="100%" height="100%" fill="#0b1020"/>
+<text x="90" y="40" fill="#f5f7ff" font-size="26" font-family="Arial" font-weight="700">Latency by Ticker</text>
+<text x="90" y="64" fill="#9aa3be" font-size="14" font-family="Arial">Histogram view: average latency (seconds)</text>
+<line x1="90" y1="344" x2="940" y2="344" stroke="#32415f" stroke-width="1"/>
+<rect x="106.2" y="92.0" width="52.7" height="252.0" rx="6" fill="#7fc8ff"/>
+<text x="132.5" y="84.0" text-anchor="middle" fill="#dfe9ff" font-size="12" font-family="Arial">41.0s</text>
+<text x="132.5" y="366" text-anchor="middle" fill="#c9d2f0" font-size="12" font-family="Arial">NVDA</text>
+<rect x="191.2" y="127.1" width="52.7" height="216.9" rx="6" fill="#7fc8ff"/>
+<text x="217.5" y="119.1" text-anchor="middle" fill="#dfe9ff" font-size="12" font-family="Arial">35.3s</text>
+<text x="217.5" y="366" text-anchor="middle" fill="#c9d2f0" font-size="12" font-family="Arial">TSLA</text>
+<rect x="276.1" y="147.1" width="52.7" height="196.9" rx="6" fill="#7fc8ff"/>
+<text x="302.5" y="139.1" text-anchor="middle" fill="#dfe9ff" font-size="12" font-family="Arial">32.1s</text>
+<text x="302.5" y="366" text-anchor="middle" fill="#c9d2f0" font-size="12" font-family="Arial">GS</text>
+<rect x="361.1" y="147.6" width="52.7" height="196.4" rx="6" fill="#7fc8ff"/>
+<text x="387.5" y="139.6" text-anchor="middle" fill="#dfe9ff" font-size="12" font-family="Arial">32.0s</text>
+<text x="387.5" y="366" text-anchor="middle" fill="#c9d2f0" font-size="12" font-family="Arial">BRK-B</text>
+<rect x="446.1" y="150.6" width="52.7" height="193.4" rx="6" fill="#7fc8ff"/>
+<text x="472.5" y="142.6" text-anchor="middle" fill="#dfe9ff" font-size="12" font-family="Arial">31.5s</text>
+<text x="472.5" y="366" text-anchor="middle" fill="#c9d2f0" font-size="12" font-family="Arial">GOOGL</text>
+<rect x="531.1" y="160.0" width="52.7" height="184.0" rx="6" fill="#7fc8ff"/>
+<text x="557.5" y="152.0" text-anchor="middle" fill="#dfe9ff" font-size="12" font-family="Arial">30.0s</text>
+<text x="557.5" y="366" text-anchor="middle" fill="#c9d2f0" font-size="12" font-family="Arial">META</text>
+<rect x="616.1" y="161.8" width="52.7" height="182.2" rx="6" fill="#7fc8ff"/>
+<text x="642.5" y="153.8" text-anchor="middle" fill="#dfe9ff" font-size="12" font-family="Arial">29.7s</text>
+<text x="642.5" y="366" text-anchor="middle" fill="#c9d2f0" font-size="12" font-family="Arial">MSFT</text>
+<rect x="701.1" y="164.1" width="52.7" height="179.9" rx="6" fill="#7fc8ff"/>
+<text x="727.5" y="156.1" text-anchor="middle" fill="#dfe9ff" font-size="12" font-family="Arial">29.3s</text>
+<text x="727.5" y="366" text-anchor="middle" fill="#c9d2f0" font-size="12" font-family="Arial">AAPL</text>
+<rect x="786.1" y="165.6" width="52.7" height="178.4" rx="6" fill="#7fc8ff"/>
+<text x="812.5" y="157.6" text-anchor="middle" fill="#dfe9ff" font-size="12" font-family="Arial">29.0s</text>
+<text x="812.5" y="366" text-anchor="middle" fill="#c9d2f0" font-size="12" font-family="Arial">JPM</text>
+<rect x="871.1" y="175.1" width="52.7" height="168.9" rx="6" fill="#7fc8ff"/>
+<text x="897.5" y="167.1" text-anchor="middle" fill="#dfe9ff" font-size="12" font-family="Arial">27.5s</text>
+<text x="897.5" y="366" text-anchor="middle" fill="#c9d2f0" font-size="12" font-family="Arial">AMZN</text>
+</svg>

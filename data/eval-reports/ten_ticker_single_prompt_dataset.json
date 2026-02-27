@@ -1,0 +1,52 @@
+[
+  {
+    "id": "NVDA-Q01",
+    "ticker": "NVDA",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "MSFT-Q02",
+    "ticker": "MSFT",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "AAPL-Q03",
+    "ticker": "AAPL",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "AMZN-Q04",
+    "ticker": "AMZN",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "GOOGL-Q05",
+    "ticker": "GOOGL",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "META-Q06",
+    "ticker": "META",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "TSLA-Q07",
+    "ticker": "TSLA",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "JPM-Q08",
+    "ticker": "JPM",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "GS-Q09",
+    "ticker": "GS",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "BRK_B-Q10",
+    "ticker": "BRK-B",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  }
+]

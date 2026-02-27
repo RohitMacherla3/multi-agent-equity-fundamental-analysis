@@ -1,0 +1,502 @@
+[
+  {
+    "id": "NVDA-Q01-S001",
+    "ticker": "NVDA",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "NVDA-Q02-S002",
+    "ticker": "NVDA",
+    "query": "What guidance or outlook signals are present in management commentary?"
+  },
+  {
+    "id": "NVDA-Q03-S003",
+    "ticker": "NVDA",
+    "query": "Identify any material risk factor changes versus prior periods."
+  },
+  {
+    "id": "NVDA-Q04-S004",
+    "ticker": "NVDA",
+    "query": "What evidence suggests margin expansion or margin pressure?"
+  },
+  {
+    "id": "NVDA-Q05-S005",
+    "ticker": "NVDA",
+    "query": "What are the strongest bull-case signals supported by cited evidence?"
+  },
+  {
+    "id": "NVDA-Q06-S006",
+    "ticker": "NVDA",
+    "query": "What are the strongest bear-case signals supported by cited evidence?"
+  },
+  {
+    "id": "NVDA-Q07-S007",
+    "ticker": "NVDA",
+    "query": "Are there signs of demand weakness, cyclicality, or concentration risk?"
+  },
+  {
+    "id": "NVDA-Q08-S008",
+    "ticker": "NVDA",
+    "query": "What capital allocation priorities are disclosed (buybacks, capex, debt)?"
+  },
+  {
+    "id": "NVDA-Q09-S009",
+    "ticker": "NVDA",
+    "query": "What governance, legal, or regulatory risks are explicitly mentioned?"
+  },
+  {
+    "id": "NVDA-Q10-S010",
+    "ticker": "NVDA",
+    "query": "What should an analyst verify next before making an investment decision?"
+  },
+  {
+    "id": "MSFT-Q01-S011",
+    "ticker": "MSFT",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "MSFT-Q02-S012",
+    "ticker": "MSFT",
+    "query": "What guidance or outlook signals are present in management commentary?"
+  },
+  {
+    "id": "MSFT-Q03-S013",
+    "ticker": "MSFT",
+    "query": "Identify any material risk factor changes versus prior periods."
+  },
+  {
+    "id": "MSFT-Q04-S014",
+    "ticker": "MSFT",
+    "query": "What evidence suggests margin expansion or margin pressure?"
+  },
+  {
+    "id": "MSFT-Q05-S015",
+    "ticker": "MSFT",
+    "query": "What are the strongest bull-case signals supported by cited evidence?"
+  },
+  {
+    "id": "MSFT-Q06-S016",
+    "ticker": "MSFT",
+    "query": "What are the strongest bear-case signals supported by cited evidence?"
+  },
+  {
+    "id": "MSFT-Q07-S017",
+    "ticker": "MSFT",
+    "query": "Are there signs of demand weakness, cyclicality, or concentration risk?"
+  },
+  {
+    "id": "MSFT-Q08-S018",
+    "ticker": "MSFT",
+    "query": "What capital allocation priorities are disclosed (buybacks, capex, debt)?"
+  },
+  {
+    "id": "MSFT-Q09-S019",
+    "ticker": "MSFT",
+    "query": "What governance, legal, or regulatory risks are explicitly mentioned?"
+  },
+  {
+    "id": "MSFT-Q10-S020",
+    "ticker": "MSFT",
+    "query": "What should an analyst verify next before making an investment decision?"
+  },
+  {
+    "id": "AAPL-Q01-S021",
+    "ticker": "AAPL",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "AAPL-Q02-S022",
+    "ticker": "AAPL",
+    "query": "What guidance or outlook signals are present in management commentary?"
+  },
+  {
+    "id": "AAPL-Q03-S023",
+    "ticker": "AAPL",
+    "query": "Identify any material risk factor changes versus prior periods."
+  },
+  {
+    "id": "AAPL-Q04-S024",
+    "ticker": "AAPL",
+    "query": "What evidence suggests margin expansion or margin pressure?"
+  },
+  {
+    "id": "AAPL-Q05-S025",
+    "ticker": "AAPL",
+    "query": "What are the strongest bull-case signals supported by cited evidence?"
+  },
+  {
+    "id": "AAPL-Q06-S026",
+    "ticker": "AAPL",
+    "query": "What are the strongest bear-case signals supported by cited evidence?"
+  },
+  {
+    "id": "AAPL-Q07-S027",
+    "ticker": "AAPL",
+    "query": "Are there signs of demand weakness, cyclicality, or concentration risk?"
+  },
+  {
+    "id": "AAPL-Q08-S028",
+    "ticker": "AAPL",
+    "query": "What capital allocation priorities are disclosed (buybacks, capex, debt)?"
+  },
+  {
+    "id": "AAPL-Q09-S029",
+    "ticker": "AAPL",
+    "query": "What governance, legal, or regulatory risks are explicitly mentioned?"
+  },
+  {
+    "id": "AAPL-Q10-S030",
+    "ticker": "AAPL",
+    "query": "What should an analyst verify next before making an investment decision?"
+  },
+  {
+    "id": "AMZN-Q01-S031",
+    "ticker": "AMZN",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "AMZN-Q02-S032",
+    "ticker": "AMZN",
+    "query": "What guidance or outlook signals are present in management commentary?"
+  },
+  {
+    "id": "AMZN-Q03-S033",
+    "ticker": "AMZN",
+    "query": "Identify any material risk factor changes versus prior periods."
+  },
+  {
+    "id": "AMZN-Q04-S034",
+    "ticker": "AMZN",
+    "query": "What evidence suggests margin expansion or margin pressure?"
+  },
+  {
+    "id": "AMZN-Q05-S035",
+    "ticker": "AMZN",
+    "query": "What are the strongest bull-case signals supported by cited evidence?"
+  },
+  {
+    "id": "AMZN-Q06-S036",
+    "ticker": "AMZN",
+    "query": "What are the strongest bear-case signals supported by cited evidence?"
+  },
+  {
+    "id": "AMZN-Q07-S037",
+    "ticker": "AMZN",
+    "query": "Are there signs of demand weakness, cyclicality, or concentration risk?"
+  },
+  {
+    "id": "AMZN-Q08-S038",
+    "ticker": "AMZN",
+    "query": "What capital allocation priorities are disclosed (buybacks, capex, debt)?"
+  },
+  {
+    "id": "AMZN-Q09-S039",
+    "ticker": "AMZN",
+    "query": "What governance, legal, or regulatory risks are explicitly mentioned?"
+  },
+  {
+    "id": "AMZN-Q10-S040",
+    "ticker": "AMZN",
+    "query": "What should an analyst verify next before making an investment decision?"
+  },
+  {
+    "id": "GOOGL-Q01-S041",
+    "ticker": "GOOGL",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "GOOGL-Q02-S042",
+    "ticker": "GOOGL",
+    "query": "What guidance or outlook signals are present in management commentary?"
+  },
+  {
+    "id": "GOOGL-Q03-S043",
+    "ticker": "GOOGL",
+    "query": "Identify any material risk factor changes versus prior periods."
+  },
+  {
+    "id": "GOOGL-Q04-S044",
+    "ticker": "GOOGL",
+    "query": "What evidence suggests margin expansion or margin pressure?"
+  },
+  {
+    "id": "GOOGL-Q05-S045",
+    "ticker": "GOOGL",
+    "query": "What are the strongest bull-case signals supported by cited evidence?"
+  },
+  {
+    "id": "GOOGL-Q06-S046",
+    "ticker": "GOOGL",
+    "query": "What are the strongest bear-case signals supported by cited evidence?"
+  },
+  {
+    "id": "GOOGL-Q07-S047",
+    "ticker": "GOOGL",
+    "query": "Are there signs of demand weakness, cyclicality, or concentration risk?"
+  },
+  {
+    "id": "GOOGL-Q08-S048",
+    "ticker": "GOOGL",
+    "query": "What capital allocation priorities are disclosed (buybacks, capex, debt)?"
+  },
+  {
+    "id": "GOOGL-Q09-S049",
+    "ticker": "GOOGL",
+    "query": "What governance, legal, or regulatory risks are explicitly mentioned?"
+  },
+  {
+    "id": "GOOGL-Q10-S050",
+    "ticker": "GOOGL",
+    "query": "What should an analyst verify next before making an investment decision?"
+  },
+  {
+    "id": "META-Q01-S051",
+    "ticker": "META",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "META-Q02-S052",
+    "ticker": "META",
+    "query": "What guidance or outlook signals are present in management commentary?"
+  },
+  {
+    "id": "META-Q03-S053",
+    "ticker": "META",
+    "query": "Identify any material risk factor changes versus prior periods."
+  },
+  {
+    "id": "META-Q04-S054",
+    "ticker": "META",
+    "query": "What evidence suggests margin expansion or margin pressure?"
+  },
+  {
+    "id": "META-Q05-S055",
+    "ticker": "META",
+    "query": "What are the strongest bull-case signals supported by cited evidence?"
+  },
+  {
+    "id": "META-Q06-S056",
+    "ticker": "META",
+    "query": "What are the strongest bear-case signals supported by cited evidence?"
+  },
+  {
+    "id": "META-Q07-S057",
+    "ticker": "META",
+    "query": "Are there signs of demand weakness, cyclicality, or concentration risk?"
+  },
+  {
+    "id": "META-Q08-S058",
+    "ticker": "META",
+    "query": "What capital allocation priorities are disclosed (buybacks, capex, debt)?"
+  },
+  {
+    "id": "META-Q09-S059",
+    "ticker": "META",
+    "query": "What governance, legal, or regulatory risks are explicitly mentioned?"
+  },
+  {
+    "id": "META-Q10-S060",
+    "ticker": "META",
+    "query": "What should an analyst verify next before making an investment decision?"
+  },
+  {
+    "id": "TSLA-Q01-S061",
+    "ticker": "TSLA",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "TSLA-Q02-S062",
+    "ticker": "TSLA",
+    "query": "What guidance or outlook signals are present in management commentary?"
+  },
+  {
+    "id": "TSLA-Q03-S063",
+    "ticker": "TSLA",
+    "query": "Identify any material risk factor changes versus prior periods."
+  },
+  {
+    "id": "TSLA-Q04-S064",
+    "ticker": "TSLA",
+    "query": "What evidence suggests margin expansion or margin pressure?"
+  },
+  {
+    "id": "TSLA-Q05-S065",
+    "ticker": "TSLA",
+    "query": "What are the strongest bull-case signals supported by cited evidence?"
+  },
+  {
+    "id": "TSLA-Q06-S066",
+    "ticker": "TSLA",
+    "query": "What are the strongest bear-case signals supported by cited evidence?"
+  },
+  {
+    "id": "TSLA-Q07-S067",
+    "ticker": "TSLA",
+    "query": "Are there signs of demand weakness, cyclicality, or concentration risk?"
+  },
+  {
+    "id": "TSLA-Q08-S068",
+    "ticker": "TSLA",
+    "query": "What capital allocation priorities are disclosed (buybacks, capex, debt)?"
+  },
+  {
+    "id": "TSLA-Q09-S069",
+    "ticker": "TSLA",
+    "query": "What governance, legal, or regulatory risks are explicitly mentioned?"
+  },
+  {
+    "id": "TSLA-Q10-S070",
+    "ticker": "TSLA",
+    "query": "What should an analyst verify next before making an investment decision?"
+  },
+  {
+    "id": "JPM-Q01-S071",
+    "ticker": "JPM",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "JPM-Q02-S072",
+    "ticker": "JPM",
+    "query": "What guidance or outlook signals are present in management commentary?"
+  },
+  {
+    "id": "JPM-Q03-S073",
+    "ticker": "JPM",
+    "query": "Identify any material risk factor changes versus prior periods."
+  },
+  {
+    "id": "JPM-Q04-S074",
+    "ticker": "JPM",
+    "query": "What evidence suggests margin expansion or margin pressure?"
+  },
+  {
+    "id": "JPM-Q05-S075",
+    "ticker": "JPM",
+    "query": "What are the strongest bull-case signals supported by cited evidence?"
+  },
+  {
+    "id": "JPM-Q06-S076",
+    "ticker": "JPM",
+    "query": "What are the strongest bear-case signals supported by cited evidence?"
+  },
+  {
+    "id": "JPM-Q07-S077",
+    "ticker": "JPM",
+    "query": "Are there signs of demand weakness, cyclicality, or concentration risk?"
+  },
+  {
+    "id": "JPM-Q08-S078",
+    "ticker": "JPM",
+    "query": "What capital allocation priorities are disclosed (buybacks, capex, debt)?"
+  },
+  {
+    "id": "JPM-Q09-S079",
+    "ticker": "JPM",
+    "query": "What governance, legal, or regulatory risks are explicitly mentioned?"
+  },
+  {
+    "id": "JPM-Q10-S080",
+    "ticker": "JPM",
+    "query": "What should an analyst verify next before making an investment decision?"
+  },
+  {
+    "id": "GS-Q01-S081",
+    "ticker": "GS",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "GS-Q02-S082",
+    "ticker": "GS",
+    "query": "What guidance or outlook signals are present in management commentary?"
+  },
+  {
+    "id": "GS-Q03-S083",
+    "ticker": "GS",
+    "query": "Identify any material risk factor changes versus prior periods."
+  },
+  {
+    "id": "GS-Q04-S084",
+    "ticker": "GS",
+    "query": "What evidence suggests margin expansion or margin pressure?"
+  },
+  {
+    "id": "GS-Q05-S085",
+    "ticker": "GS",
+    "query": "What are the strongest bull-case signals supported by cited evidence?"
+  },
+  {
+    "id": "GS-Q06-S086",
+    "ticker": "GS",
+    "query": "What are the strongest bear-case signals supported by cited evidence?"
+  },
+  {
+    "id": "GS-Q07-S087",
+    "ticker": "GS",
+    "query": "Are there signs of demand weakness, cyclicality, or concentration risk?"
+  },
+  {
+    "id": "GS-Q08-S088",
+    "ticker": "GS",
+    "query": "What capital allocation priorities are disclosed (buybacks, capex, debt)?"
+  },
+  {
+    "id": "GS-Q09-S089",
+    "ticker": "GS",
+    "query": "What governance, legal, or regulatory risks are explicitly mentioned?"
+  },
+  {
+    "id": "GS-Q10-S090",
+    "ticker": "GS",
+    "query": "What should an analyst verify next before making an investment decision?"
+  },
+  {
+    "id": "BRK_B-Q01-S091",
+    "ticker": "BRK-B",
+    "query": "Summarize the top growth drivers and top risks from the latest filing."
+  },
+  {
+    "id": "BRK_B-Q02-S092",
+    "ticker": "BRK-B",
+    "query": "What guidance or outlook signals are present in management commentary?"
+  },
+  {
+    "id": "BRK_B-Q03-S093",
+    "ticker": "BRK-B",
+    "query": "Identify any material risk factor changes versus prior periods."
+  },
+  {
+    "id": "BRK_B-Q04-S094",
+    "ticker": "BRK-B",
+    "query": "What evidence suggests margin expansion or margin pressure?"
+  },
+  {
+    "id": "BRK_B-Q05-S095",
+    "ticker": "BRK-B",
+    "query": "What are the strongest bull-case signals supported by cited evidence?"
+  },
+  {
+    "id": "BRK_B-Q06-S096",
+    "ticker": "BRK-B",
+    "query": "What are the strongest bear-case signals supported by cited evidence?"
+  },
+  {
+    "id": "BRK_B-Q07-S097",
+    "ticker": "BRK-B",
+    "query": "Are there signs of demand weakness, cyclicality, or concentration risk?"
+  },
+  {
+    "id": "BRK_B-Q08-S098",
+    "ticker": "BRK-B",
+    "query": "What capital allocation priorities are disclosed (buybacks, capex, debt)?"
+  },
+  {
+    "id": "BRK_B-Q09-S099",
+    "ticker": "BRK-B",
+    "query": "What governance, legal, or regulatory risks are explicitly mentioned?"
+  },
+  {
+    "id": "BRK_B-Q10-S100",
+    "ticker": "BRK-B",
+    "query": "What should an analyst verify next before making an investment decision?"
+  }
+]

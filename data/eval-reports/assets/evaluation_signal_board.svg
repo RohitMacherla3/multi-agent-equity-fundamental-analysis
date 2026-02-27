@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="460" viewBox="0 0 980 460">
+<rect width="100%" height="100%" fill="#0b1020"/>
+<text x="170" y="40" fill="#f5f7ff" font-size="26" font-family="Arial" font-weight="700">Signal Board Summary</text>
+<text x="170" y="64" fill="#9aa3be" font-size="14" font-family="Arial">Normalized score heatmap (0-100, higher = better)</text>
+<text x="689" y="94" fill="#b7c8e8" font-size="12" font-family="Arial" font-weight="700">Legend</text>
+<rect x="689" y="104" width="92" height="14" rx="4" fill="#6b2d2f"/>
+<text x="791" y="115" fill="#b7c8e8" font-size="11" font-family="Arial">0-20</text>
+<rect x="689" y="128" width="92" height="14" rx="4" fill="#7a4b2f"/>
+<text x="791" y="139" fill="#b7c8e8" font-size="11" font-family="Arial">20-40</text>
+<rect x="689" y="152" width="92" height="14" rx="4" fill="#6f6431"/>
+<text x="791" y="163" fill="#b7c8e8" font-size="11" font-family="Arial">40-60</text>
+<rect x="689" y="176" width="92" height="14" rx="4" fill="#3f6a44"/>
+<text x="791" y="187" fill="#b7c8e8" font-size="11" font-family="Arial">60-80</text>
+<rect x="689" y="200" width="92" height="14" rx="4" fill="#2e6f5a"/>
+<text x="791" y="211" fill="#b7c8e8" font-size="11" font-family="Arial">80-100</text>
+<text x="178" y="80" fill="#cdd8f3" font-size="13" font-family="Arial" font-weight="700">Citation</text>
+<text x="343" y="80" fill="#cdd8f3" font-size="13" font-family="Arial" font-weight="700">Confidence</text>
+<text x="508" y="80" fill="#cdd8f3" font-size="13" font-family="Arial" font-weight="700">Latency</text>
+<text x="160" y="109" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">AAPL</text>
+<rect x="170" y="90" width="155" height="28" rx="6" fill="#3f6a44" stroke="#1f2c44" stroke-width="1"/>
+<text x="180" y="109" fill="#eef4ff" font-size="12" font-family="Arial">75.0%</text>
+<rect x="335" y="90" width="155" height="28" rx="6" fill="#6b2d2f" stroke="#1f2c44" stroke-width="1"/>
+<text x="345" y="109" fill="#eef4ff" font-size="12" font-family="Arial">0.33</text>
+<rect x="500" y="90" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="510" y="109" fill="#eef4ff" font-size="12" font-family="Arial">29.3s</text>
+<text x="160" y="145" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">AMZN</text>
+<rect x="170" y="126" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="180" y="145" fill="#eef4ff" font-size="12" font-family="Arial">100.0%</text>
+<rect x="335" y="126" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="345" y="145" fill="#eef4ff" font-size="12" font-family="Arial">0.66</text>
+<rect x="500" y="126" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="510" y="145" fill="#eef4ff" font-size="12" font-family="Arial">27.5s</text>
+<text x="160" y="181" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">BRK-B</text>
+<rect x="170" y="162" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="180" y="181" fill="#eef4ff" font-size="12" font-family="Arial">87.5%</text>
+<rect x="335" y="162" width="155" height="28" rx="6" fill="#6b2d2f" stroke="#1f2c44" stroke-width="1"/>
+<text x="345" y="181" fill="#eef4ff" font-size="12" font-family="Arial">0.33</text>
+<rect x="500" y="162" width="155" height="28" rx="6" fill="#3f6a44" stroke="#1f2c44" stroke-width="1"/>
+<text x="510" y="181" fill="#eef4ff" font-size="12" font-family="Arial">32.0s</text>
+<text x="160" y="217" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">GOOGL</text>
+<rect x="170" y="198" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="180" y="217" fill="#eef4ff" font-size="12" font-family="Arial">100.0%</text>
+<rect x="335" y="198" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="345" y="217" fill="#eef4ff" font-size="12" font-family="Arial">0.66</text>
+<rect x="500" y="198" width="155" height="28" rx="6" fill="#3f6a44" stroke="#1f2c44" stroke-width="1"/>
+<text x="510" y="217" fill="#eef4ff" font-size="12" font-family="Arial">31.5s</text>
+<text x="160" y="253" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">GS</text>
+<rect x="170" y="234" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="180" y="253" fill="#eef4ff" font-size="12" font-family="Arial">100.0%</text>
+<rect x="335" y="234" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="345" y="253" fill="#eef4ff" font-size="12" font-family="Arial">0.66</text>
+<rect x="500" y="234" width="155" height="28" rx="6" fill="#3f6a44" stroke="#1f2c44" stroke-width="1"/>
+<text x="510" y="253" fill="#eef4ff" font-size="12" font-family="Arial">32.1s</text>
+<text x="160" y="289" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">JPM</text>
+<rect x="170" y="270" width="155" height="28" rx="6" fill="#3f6a44" stroke="#1f2c44" stroke-width="1"/>
+<text x="180" y="289" fill="#eef4ff" font-size="12" font-family="Arial">85.7%</text>
+<rect x="335" y="270" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="345" y="289" fill="#eef4ff" font-size="12" font-family="Arial">0.66</text>
+<rect x="500" y="270" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="510" y="289" fill="#eef4ff" font-size="12" font-family="Arial">29.0s</text>
+<text x="160" y="325" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">META</text>
+<rect x="170" y="306" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="180" y="325" fill="#eef4ff" font-size="12" font-family="Arial">88.9%</text>
+<rect x="335" y="306" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="345" y="325" fill="#eef4ff" font-size="12" font-family="Arial">0.66</text>
+<rect x="500" y="306" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="510" y="325" fill="#eef4ff" font-size="12" font-family="Arial">30.0s</text>
+<text x="160" y="361" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">MSFT</text>
+<rect x="170" y="342" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="180" y="361" fill="#eef4ff" font-size="12" font-family="Arial">90.0%</text>
+<rect x="335" y="342" width="155" height="28" rx="6" fill="#6b2d2f" stroke="#1f2c44" stroke-width="1"/>
+<text x="345" y="361" fill="#eef4ff" font-size="12" font-family="Arial">0.33</text>
+<rect x="500" y="342" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="510" y="361" fill="#eef4ff" font-size="12" font-family="Arial">29.7s</text>
+<text x="160" y="397" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">NVDA</text>
+<rect x="170" y="378" width="155" height="28" rx="6" fill="#6b2d2f" stroke="#1f2c44" stroke-width="1"/>
+<text x="180" y="397" fill="#eef4ff" font-size="12" font-family="Arial">33.3%</text>
+<rect x="335" y="378" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="345" y="397" fill="#eef4ff" font-size="12" font-family="Arial">0.66</text>
+<rect x="500" y="378" width="155" height="28" rx="6" fill="#6b2d2f" stroke="#1f2c44" stroke-width="1"/>
+<text x="510" y="397" fill="#eef4ff" font-size="12" font-family="Arial">41.0s</text>
+<text x="160" y="433" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">TSLA</text>
+<rect x="170" y="414" width="155" height="28" rx="6" fill="#3f6a44" stroke="#1f2c44" stroke-width="1"/>
+<text x="180" y="433" fill="#eef4ff" font-size="12" font-family="Arial">77.8%</text>
+<rect x="335" y="414" width="155" height="28" rx="6" fill="#2e6f5a" stroke="#1f2c44" stroke-width="1"/>
+<text x="345" y="433" fill="#eef4ff" font-size="12" font-family="Arial">0.66</text>
+<rect x="500" y="414" width="155" height="28" rx="6" fill="#6f6431" stroke="#1f2c44" stroke-width="1"/>
+<text x="510" y="433" fill="#eef4ff" font-size="12" font-family="Arial">35.3s</text>
+</svg>

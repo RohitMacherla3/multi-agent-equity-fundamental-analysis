@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430">
+<rect width="100%" height="100%" fill="#0b1020"/>
+<text x="180" y="40" fill="#f5f7ff" font-size="26" font-family="Arial" font-weight="700">Confidence Score by Ticker</text>
+<text x="180" y="64" fill="#9aa3be" font-size="14" font-family="Arial">Analyst Deck: ranked confidence meters</text>
+<line x1="180" y1="82" x2="932" y2="82" stroke="#1b2742" stroke-width="6" stroke-linecap="round"/>
+<line x1="180" y1="82" x2="932.0" y2="82" stroke="#8bf2cc" stroke-width="6" stroke-linecap="round"/>
+<circle cx="932.0" cy="82" r="6" fill="#8bf2cc" stroke="#dfe9ff" stroke-width="1"/>
+<text x="168" y="87" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">NVDA</text>
+<text x="940" y="87" fill="#e8efff" font-size="12" font-family="Arial">0.66</text>
+<line x1="180" y1="112" x2="932" y2="112" stroke="#1b2742" stroke-width="6" stroke-linecap="round"/>
+<line x1="180" y1="112" x2="932.0" y2="112" stroke="#8bf2cc" stroke-width="6" stroke-linecap="round"/>
+<circle cx="932.0" cy="112" r="6" fill="#8bf2cc" stroke="#dfe9ff" stroke-width="1"/>
+<text x="168" y="117" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">AMZN</text>
+<text x="940" y="117" fill="#e8efff" font-size="12" font-family="Arial">0.66</text>
+<line x1="180" y1="142" x2="932" y2="142" stroke="#1b2742" stroke-width="6" stroke-linecap="round"/>
+<line x1="180" y1="142" x2="932.0" y2="142" stroke="#8bf2cc" stroke-width="6" stroke-linecap="round"/>
+<circle cx="932.0" cy="142" r="6" fill="#8bf2cc" stroke="#dfe9ff" stroke-width="1"/>
+<text x="168" y="147" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">GOOGL</text>
+<text x="940" y="147" fill="#e8efff" font-size="12" font-family="Arial">0.66</text>
+<line x1="180" y1="172" x2="932" y2="172" stroke="#1b2742" stroke-width="6" stroke-linecap="round"/>
+<line x1="180" y1="172" x2="932.0" y2="172" stroke="#8bf2cc" stroke-width="6" stroke-linecap="round"/>
+<circle cx="932.0" cy="172" r="6" fill="#8bf2cc" stroke="#dfe9ff" stroke-width="1"/>
+<text x="168" y="177" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">META</text>
+<text x="940" y="177" fill="#e8efff" font-size="12" font-family="Arial">0.66</text>
+<line x1="180" y1="202" x2="932" y2="202" stroke="#1b2742" stroke-width="6" stroke-linecap="round"/>
+<line x1="180" y1="202" x2="932.0" y2="202" stroke="#8bf2cc" stroke-width="6" stroke-linecap="round"/>
+<circle cx="932.0" cy="202" r="6" fill="#8bf2cc" stroke="#dfe9ff" stroke-width="1"/>
+<text x="168" y="207" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">TSLA</text>
+<text x="940" y="207" fill="#e8efff" font-size="12" font-family="Arial">0.66</text>
+<line x1="180" y1="232" x2="932" y2="232" stroke="#1b2742" stroke-width="6" stroke-linecap="round"/>
+<line x1="180" y1="232" x2="932.0" y2="232" stroke="#8bf2cc" stroke-width="6" stroke-linecap="round"/>
+<circle cx="932.0" cy="232" r="6" fill="#8bf2cc" stroke="#dfe9ff" stroke-width="1"/>
+<text x="168" y="237" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">JPM</text>
+<text x="940" y="237" fill="#e8efff" font-size="12" font-family="Arial">0.66</text>
+<line x1="180" y1="262" x2="932" y2="262" stroke="#1b2742" stroke-width="6" stroke-linecap="round"/>
+<line x1="180" y1="262" x2="932.0" y2="262" stroke="#8bf2cc" stroke-width="6" stroke-linecap="round"/>
+<circle cx="932.0" cy="262" r="6" fill="#8bf2cc" stroke="#dfe9ff" stroke-width="1"/>
+<text x="168" y="267" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">GS</text>
+<text x="940" y="267" fill="#e8efff" font-size="12" font-family="Arial">0.66</text>
+<line x1="180" y1="292" x2="932" y2="292" stroke="#1b2742" stroke-width="6" stroke-linecap="round"/>
+<line x1="180" y1="292" x2="556.0" y2="292" stroke="#8bf2cc" stroke-width="6" stroke-linecap="round"/>
+<circle cx="556.0" cy="292" r="6" fill="#8bf2cc" stroke="#dfe9ff" stroke-width="1"/>
+<text x="168" y="297" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">MSFT</text>
+<text x="940" y="297" fill="#e8efff" font-size="12" font-family="Arial">0.33</text>
+<line x1="180" y1="322" x2="932" y2="322" stroke="#1b2742" stroke-width="6" stroke-linecap="round"/>
+<line x1="180" y1="322" x2="556.0" y2="322" stroke="#8bf2cc" stroke-width="6" stroke-linecap="round"/>
+<circle cx="556.0" cy="322" r="6" fill="#8bf2cc" stroke="#dfe9ff" stroke-width="1"/>
+<text x="168" y="327" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">AAPL</text>
+<text x="940" y="327" fill="#e8efff" font-size="12" font-family="Arial">0.33</text>
+<line x1="180" y1="352" x2="932" y2="352" stroke="#1b2742" stroke-width="6" stroke-linecap="round"/>
+<line x1="180" y1="352" x2="556.0" y2="352" stroke="#8bf2cc" stroke-width="6" stroke-linecap="round"/>
+<circle cx="556.0" cy="352" r="6" fill="#8bf2cc" stroke="#dfe9ff" stroke-width="1"/>
+<text x="168" y="357" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">BRK-B</text>
+<text x="940" y="357" fill="#e8efff" font-size="12" font-family="Arial">0.33</text>
+</svg>
