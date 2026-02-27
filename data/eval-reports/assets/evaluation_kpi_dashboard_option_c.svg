@@ -4,16 +4,16 @@
 <text x="54" y="62" fill="#f5f7ff" font-size="30" font-family="Arial" font-weight="700">Evaluation KPI Dashboard</text>
 <rect x="30" y="124" width="238" height="92" rx="11" fill="#13343c" stroke="#4fd1c5" stroke-width="1.2"/>
 <text x="44" y="154" fill="#9ee9df" font-size="16" font-family="Arial">Avg Cost / Query</text>
-<text x="44" y="200" fill="#f5f8ff" font-size="39" font-family="Arial" font-weight="700">$0.000948</text>
+<text x="44" y="200" fill="#f5f8ff" font-size="39" font-family="Arial" font-weight="700">$0.000904</text>
 <rect x="324" y="124" width="238" height="92" rx="11" fill="#162f46" stroke="#63b3ed" stroke-width="1.2"/>
 <text x="338" y="154" fill="#b8dcff" font-size="16" font-family="Arial">Avg Latency</text>
-<text x="338" y="200" fill="#f5f8ff" font-size="39" font-family="Arial" font-weight="700">31.74s</text>
+<text x="338" y="200" fill="#f5f8ff" font-size="39" font-family="Arial" font-weight="700">35.82s</text>
 <rect x="618" y="124" width="238" height="92" rx="11" fill="#1b3a2c" stroke="#68d391" stroke-width="1.2"/>
 <text x="632" y="154" fill="#b9f3cc" font-size="16" font-family="Arial">Avg Input Tokens</text>
-<text x="632" y="200" fill="#f5f8ff" font-size="39" font-family="Arial" font-weight="700">2,186</text>
+<text x="632" y="200" fill="#f5f8ff" font-size="39" font-family="Arial" font-weight="700">2,082</text>
 <rect x="912" y="124" width="238" height="92" rx="11" fill="#2a2f4d" stroke="#8da2fb" stroke-width="1.2"/>
 <text x="926" y="154" fill="#cfd7ff" font-size="16" font-family="Arial">Avg Output Tokens</text>
-<text x="926" y="200" fill="#f5f8ff" font-size="39" font-family="Arial" font-weight="700">1,034</text>
+<text x="926" y="200" fill="#f5f8ff" font-size="39" font-family="Arial" font-weight="700">986</text>
 <rect x="30" y="254" width="548" height="556" rx="14" fill="#152536" stroke="#5bb7ff" stroke-width="1.2"/>
 <text x="48" y="289" fill="#5bb7ff" font-size="22" font-family="Arial" font-weight="700">Quality Metrics</text>
 <text x="48" y="316" fill="#c6d5ef" font-size="14" font-family="Arial">Retrieval Hit Rate</text>
@@ -21,42 +21,42 @@
 <rect x="48" y="328" width="510" height="28" rx="10" fill="#0f1728" stroke="#2f4165" stroke-width="1"/>
 <rect x="48" y="328" width="510.0" height="28" rx="10" fill="#64b5ff"/>
 <text x="48" y="400" fill="#c6d5ef" font-size="14" font-family="Arial">Citation Coverage</text>
-<text x="558" y="400" text-anchor="end" fill="#e8efff" font-size="14" font-family="Arial" font-weight="700">81.18%</text>
+<text x="558" y="400" text-anchor="end" fill="#e8efff" font-size="14" font-family="Arial" font-weight="700">80.30%</text>
 <rect x="48" y="412" width="510" height="28" rx="10" fill="#0f1728" stroke="#2f4165" stroke-width="1"/>
-<rect x="48" y="412" width="414.0" height="28" rx="10" fill="#85f2c3"/>
+<rect x="48" y="412" width="409.5" height="28" rx="10" fill="#85f2c3"/>
 <text x="48" y="484" fill="#c6d5ef" font-size="14" font-family="Arial">Success Rate</text>
 <text x="558" y="484" text-anchor="end" fill="#e8efff" font-size="14" font-family="Arial" font-weight="700">100.00%</text>
 <rect x="48" y="496" width="510" height="28" rx="10" fill="#0f1728" stroke="#2f4165" stroke-width="1"/>
 <rect x="48" y="496" width="510.0" height="28" rx="10" fill="#73d7c7"/>
 <text x="48" y="568" fill="#c6d5ef" font-size="14" font-family="Arial">News Coverage</text>
-<text x="558" y="568" text-anchor="end" fill="#e8efff" font-size="14" font-family="Arial" font-weight="700">100.00%</text>
+<text x="558" y="568" text-anchor="end" fill="#e8efff" font-size="14" font-family="Arial" font-weight="700">87.00%</text>
 <rect x="48" y="580" width="510" height="28" rx="10" fill="#0f1728" stroke="#2f4165" stroke-width="1"/>
-<rect x="48" y="580" width="510.0" height="28" rx="10" fill="#7de0d2"/>
+<rect x="48" y="580" width="443.7" height="28" rx="10" fill="#7de0d2"/>
 <text x="48" y="652" fill="#c6d5ef" font-size="14" font-family="Arial">Error Rate</text>
 <text x="558" y="652" text-anchor="end" fill="#e8efff" font-size="14" font-family="Arial" font-weight="700">0.00%</text>
 <rect x="48" y="664" width="510" height="28" rx="10" fill="#0f1728" stroke="#2f4165" stroke-width="1"/>
 <rect x="48" y="664" width="0.0" height="28" rx="10" fill="#ff8d8d"/>
-<text x="48" y="792" fill="#c5d7ff" font-size="17" font-family="Arial" font-weight="700">P95 Latency: 41.04s  |  Requests: 10</text>
+<text x="48" y="792" fill="#c5d7ff" font-size="17" font-family="Arial" font-weight="700">P95 Latency: 46.38s  |  Requests: 100</text>
 <rect x="602" y="254" width="548" height="556" rx="14" fill="#1f2b34" stroke="#78c6ff" stroke-width="1.2"/>
 <text x="620" y="289" fill="#78c6ff" font-size="22" font-family="Arial" font-weight="700">Token Distribution by Agent</text>
 <text x="620" y="320" fill="#cde5f7" font-size="16" font-family="Arial">Filing Agent</text>
-<text x="1130" y="320" text-anchor="end" fill="#ecf6ff" font-size="16" font-family="Arial" font-weight="700">48</text>
+<text x="1130" y="320" text-anchor="end" fill="#ecf6ff" font-size="16" font-family="Arial" font-weight="700">54</text>
 <rect x="620" y="336" width="510" height="26" rx="12" fill="#171e29" stroke="#355876" stroke-width="1"/>
-<rect x="620" y="336" width="11.1" height="26" rx="12" fill="#7bdff2"/>
+<rect x="620" y="336" width="13.1" height="26" rx="12" fill="#7bdff2"/>
 <text x="620" y="406" fill="#cde5f7" font-size="16" font-family="Arial">SEC Facts Agent</text>
-<text x="1130" y="406" text-anchor="end" fill="#ecf6ff" font-size="16" font-family="Arial" font-weight="700">417</text>
+<text x="1130" y="406" text-anchor="end" fill="#ecf6ff" font-size="16" font-family="Arial" font-weight="700">411</text>
 <rect x="620" y="422" width="510" height="26" rx="12" fill="#171e29" stroke="#355876" stroke-width="1"/>
-<rect x="620" y="422" width="96.8" height="26" rx="12" fill="#90f1b8"/>
+<rect x="620" y="422" width="99.8" height="26" rx="12" fill="#90f1b8"/>
 <text x="620" y="492" fill="#cde5f7" font-size="16" font-family="Arial">News Agent</text>
-<text x="1130" y="492" text-anchor="end" fill="#ecf6ff" font-size="16" font-family="Arial" font-weight="700">416</text>
+<text x="1130" y="492" text-anchor="end" fill="#ecf6ff" font-size="16" font-family="Arial" font-weight="700">353</text>
 <rect x="620" y="508" width="510" height="26" rx="12" fill="#171e29" stroke="#355876" stroke-width="1"/>
-<rect x="620" y="508" width="96.5" height="26" rx="12" fill="#a9c1ff"/>
+<rect x="620" y="508" width="85.7" height="26" rx="12" fill="#a9c1ff"/>
 <text x="620" y="578" fill="#cde5f7" font-size="16" font-family="Arial">Other (Planner/Critic/etc)</text>
-<text x="1130" y="578" text-anchor="end" fill="#ecf6ff" font-size="16" font-family="Arial" font-weight="700">476</text>
+<text x="1130" y="578" text-anchor="end" fill="#ecf6ff" font-size="16" font-family="Arial" font-weight="700">469</text>
 <rect x="620" y="594" width="510" height="26" rx="12" fill="#171e29" stroke="#355876" stroke-width="1"/>
-<rect x="620" y="594" width="110.5" height="26" rx="12" fill="#ff9f7a"/>
+<rect x="620" y="594" width="113.8" height="26" rx="12" fill="#ff9f7a"/>
 <text x="620" y="664" fill="#cde5f7" font-size="16" font-family="Arial">Writer Agent</text>
-<text x="1130" y="664" text-anchor="end" fill="#ecf6ff" font-size="16" font-family="Arial" font-weight="700">1,862</text>
+<text x="1130" y="664" text-anchor="end" fill="#ecf6ff" font-size="16" font-family="Arial" font-weight="700">1,781</text>
 <rect x="620" y="680" width="510" height="26" rx="12" fill="#171e29" stroke="#355876" stroke-width="1"/>
 <rect x="620" y="680" width="432.2" height="26" rx="12" fill="#8ae6de"/>
 <rect x="30.0" y="832" width="552.0" height="44" rx="10" fill="#0f1730" stroke="#304566" stroke-width="1"/>

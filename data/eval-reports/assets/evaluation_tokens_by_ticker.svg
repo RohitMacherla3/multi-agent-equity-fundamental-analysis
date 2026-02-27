@@ -4,44 +4,44 @@
 <text x="180" y="64" fill="#9aa3be" font-size="14" font-family="Arial">Analyst Deck: stacked input + output tokens</text>
 <text x="180" y="78" fill="#7cc8ff" font-size="12" font-family="Arial">■ Input</text>
 <text x="240" y="78" fill="#8bf2cc" font-size="12" font-family="Arial">■ Output</text>
-<text x="168" y="93" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">MSFT</text>
-<rect x="180" y="80" width="437.8" height="16" rx="6" fill="#7cc8ff"/>
-<rect x="617.8" y="80" width="292.2" height="16" rx="6" fill="#8bf2cc"/>
-<text x="918" y="93" fill="#eaf2ff" font-size="12" font-family="Arial">1,245 + 831</text>
-<text x="168" y="123" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">NVDA</text>
-<rect x="180" y="110" width="531.7" height="16" rx="6" fill="#7cc8ff"/>
-<rect x="711.7" y="110" width="154.7" height="16" rx="6" fill="#8bf2cc"/>
-<text x="918" y="123" fill="#eaf2ff" font-size="12" font-family="Arial">1,512 + 440</text>
-<text x="168" y="153" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">BRK-B</text>
-<rect x="180" y="140" width="405.1" height="16" rx="6" fill="#7cc8ff"/>
-<rect x="585.1" y="140" width="273.6" height="16" rx="6" fill="#8bf2cc"/>
-<text x="918" y="153" fill="#eaf2ff" font-size="12" font-family="Arial">1,152 + 778</text>
-<text x="168" y="183" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">AMZN</text>
-<rect x="180" y="170" width="383.6" height="16" rx="6" fill="#7cc8ff"/>
-<rect x="563.6" y="170" width="281.3" height="16" rx="6" fill="#8bf2cc"/>
-<text x="918" y="183" fill="#eaf2ff" font-size="12" font-family="Arial">1,091 + 800</text>
-<text x="168" y="213" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">TSLA</text>
-<rect x="180" y="200" width="404.4" height="16" rx="6" fill="#7cc8ff"/>
-<rect x="584.4" y="200" width="251.4" height="16" rx="6" fill="#8bf2cc"/>
-<text x="918" y="213" fill="#eaf2ff" font-size="12" font-family="Arial">1,150 + 715</text>
+<text x="168" y="93" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">NVDA</text>
+<rect x="180" y="80" width="523.9" height="16" rx="6" fill="#7cc8ff"/>
+<rect x="703.9" y="80" width="206.1" height="16" rx="6" fill="#8bf2cc"/>
+<text x="918" y="93" fill="#eaf2ff" font-size="12" font-family="Arial">1,523 + 599</text>
+<text x="168" y="123" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">MSFT</text>
+<rect x="180" y="110" width="419.2" height="16" rx="6" fill="#7cc8ff"/>
+<rect x="599.2" y="110" width="250.6" height="16" rx="6" fill="#8bf2cc"/>
+<text x="918" y="123" fill="#eaf2ff" font-size="12" font-family="Arial">1,219 + 729</text>
+<text x="168" y="153" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">AAPL</text>
+<rect x="180" y="140" width="422.4" height="16" rx="6" fill="#7cc8ff"/>
+<rect x="602.4" y="140" width="232.2" height="16" rx="6" fill="#8bf2cc"/>
+<text x="918" y="153" fill="#eaf2ff" font-size="12" font-family="Arial">1,228 + 675</text>
+<text x="168" y="183" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">TSLA</text>
+<rect x="180" y="170" width="394.7" height="16" rx="6" fill="#7cc8ff"/>
+<rect x="574.7" y="170" width="240.4" height="16" rx="6" fill="#8bf2cc"/>
+<text x="918" y="183" fill="#eaf2ff" font-size="12" font-family="Arial">1,148 + 699</text>
+<text x="168" y="213" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">AMZN</text>
+<rect x="180" y="200" width="393.3" height="16" rx="6" fill="#7cc8ff"/>
+<rect x="573.3" y="200" width="232.4" height="16" rx="6" fill="#8bf2cc"/>
+<text x="918" y="213" fill="#eaf2ff" font-size="12" font-family="Arial">1,143 + 676</text>
 <text x="168" y="243" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">GOOGL</text>
-<rect x="180" y="230" width="379.8" height="16" rx="6" fill="#7cc8ff"/>
-<rect x="559.8" y="230" width="274.3" height="16" rx="6" fill="#8bf2cc"/>
-<text x="918" y="243" fill="#eaf2ff" font-size="12" font-family="Arial">1,080 + 780</text>
+<rect x="180" y="230" width="376.3" height="16" rx="6" fill="#7cc8ff"/>
+<rect x="556.3" y="230" width="248.4" height="16" rx="6" fill="#8bf2cc"/>
+<text x="918" y="243" fill="#eaf2ff" font-size="12" font-family="Arial">1,094 + 722</text>
 <text x="168" y="273" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">META</text>
-<rect x="180" y="260" width="423.7" height="16" rx="6" fill="#7cc8ff"/>
-<rect x="603.7" y="260" width="218.7" height="16" rx="6" fill="#8bf2cc"/>
-<text x="918" y="273" fill="#eaf2ff" font-size="12" font-family="Arial">1,205 + 622</text>
-<text x="168" y="303" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">AAPL</text>
-<rect x="180" y="290" width="404.7" height="16" rx="6" fill="#7cc8ff"/>
-<rect x="584.7" y="290" width="237.0" height="16" rx="6" fill="#8bf2cc"/>
-<text x="918" y="303" fill="#eaf2ff" font-size="12" font-family="Arial">1,151 + 674</text>
+<rect x="180" y="260" width="383.7" height="16" rx="6" fill="#7cc8ff"/>
+<rect x="563.7" y="260" width="232.0" height="16" rx="6" fill="#8bf2cc"/>
+<text x="918" y="273" fill="#eaf2ff" font-size="12" font-family="Arial">1,116 + 674</text>
+<text x="168" y="303" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">JPM</text>
+<rect x="180" y="290" width="369.7" height="16" rx="6" fill="#7cc8ff"/>
+<rect x="549.7" y="290" width="225.5" height="16" rx="6" fill="#8bf2cc"/>
+<text x="918" y="303" fill="#eaf2ff" font-size="12" font-family="Arial">1,075 + 655</text>
 <text x="168" y="333" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">GS</text>
-<rect x="180" y="320" width="402.3" height="16" rx="6" fill="#7cc8ff"/>
-<rect x="582.3" y="320" width="203.9" height="16" rx="6" fill="#8bf2cc"/>
-<text x="918" y="333" fill="#eaf2ff" font-size="12" font-family="Arial">1,144 + 580</text>
-<text x="168" y="363" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">JPM</text>
-<rect x="180" y="350" width="358.0" height="16" rx="6" fill="#7cc8ff"/>
-<rect x="538.0" y="350" width="230.7" height="16" rx="6" fill="#8bf2cc"/>
-<text x="918" y="363" fill="#eaf2ff" font-size="12" font-family="Arial">1,018 + 656</text>
+<rect x="180" y="320" width="312.3" height="16" rx="6" fill="#7cc8ff"/>
+<rect x="492.3" y="320" width="207.6" height="16" rx="6" fill="#8bf2cc"/>
+<text x="918" y="333" fill="#eaf2ff" font-size="12" font-family="Arial">908 + 603</text>
+<text x="168" y="363" text-anchor="end" fill="#cdd8f3" font-size="13" font-family="Arial">BRK-B</text>
+<rect x="180" y="350" width="260.3" height="16" rx="6" fill="#7cc8ff"/>
+<rect x="440.3" y="350" width="192.7" height="16" rx="6" fill="#8bf2cc"/>
+<text x="918" y="363" fill="#eaf2ff" font-size="12" font-family="Arial">757 + 560</text>
 </svg>
