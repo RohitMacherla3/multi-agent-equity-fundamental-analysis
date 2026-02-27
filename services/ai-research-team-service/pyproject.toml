@@ -1,0 +1,23 @@
+[project]
+name = "ifip-ai-analysis-service"
+version = "0.1.0"
+description = "Python AI analysis service for Multi-Agent Equity Fundamental Analysis"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi",
+  "uvicorn",
+  "pydantic",
+  "httpx",
+  "beautifulsoup4",
+  "numpy",
+  "python-dotenv",
+  "chromadb",
+  "langchain",
+  "langgraph",
+  "langchain-openai",
+  "streamlit>=1.54.0",
+  "reportlab>=4.4.10",
+]
+
+[tool.uv]
+package = false

@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+httpx
+beautifulsoup4
+numpy
+python-dotenv
+chromadb
+langchain
+langgraph
+langchain-openai
+
+streamlit

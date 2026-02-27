@@ -1,0 +1,7 @@
+[
+  {"id": "q1", "query": "Summarize risk and growth signals in the latest filings", "ticker": "NVDA"},
+  {"id": "q2", "query": "What guidance signals are visible from recent management commentary?", "ticker": "MSFT"},
+  {"id": "q3", "query": "Identify key risk factor disclosures and any warning signs", "ticker": "AMZN"},
+  {"id": "q4", "query": "Highlight business momentum and downside risks", "ticker": "AAPL"},
+  {"id": "q5", "query": "Find evidence-backed concerns from latest 10-K and 10-Q", "ticker": "GS"}
+]
