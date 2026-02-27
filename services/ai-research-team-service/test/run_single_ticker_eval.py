@@ -32,7 +32,7 @@ def main() -> None:
     logger = logging.getLogger("ai_research.test.single_eval")
 
     parser = argparse.ArgumentParser(description="Run 1-prompt single-ticker eval and generate SVGs")
-    parser.add_argument("--ticker", required=True, help="Ticker symbol, e.g. AMZN")
+    parser.add_argument("--ticker", default="NVDA", help="Ticker symbol, e.g. NVDA")
     parser.add_argument(
         "--query",
         default="Summarize the top growth drivers and top risks from the latest filing.",

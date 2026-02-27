@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-ROOT := /Users/rohitmacherla/Documents/Projects/equities-research-agent
+ROOT := /Users/rohitmacherla/Documents/Projects/multi-agent-equity-fundamental-analysis
 JAVA17_HOME := $(shell /usr/libexec/java_home -v 17 2>/dev/null)
 RUN_DIR := $(ROOT)/.run
 LOG_DIR := $(ROOT)/data/logs

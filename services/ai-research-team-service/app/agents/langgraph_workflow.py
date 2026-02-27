@@ -5,10 +5,20 @@ import logging
 import re
 import time
 import textwrap
+import warnings
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Any, Literal, Optional, TypedDict
+
+# Suppress pydantic v2 serializer warnings that fire when LangChain attaches the
+# structured-output parse result to the raw OpenAI response object whose type
+# annotation for `parsed` is `None`.
+warnings.filterwarnings(
+    "ignore",
+    message=".*PydanticSerializationUnexpectedValue.*",
+    category=UserWarning,
+)
 
 import httpx
 from pydantic import BaseModel, Field
@@ -118,10 +128,14 @@ class LangGraphSwarmWorkflow:
         self.logger = logging.getLogger("ai_research.agents.langgraph")
         self.indexer = indexer
         if StateGraph is None or ChatOpenAI is None:
-            raise RuntimeError("langgraph/langchain-openai must be installed for agent workflow.")
+            raise RuntimeError(
+                "langgraph/langchain-openai must be installed for agent workflow."
+            )
         self.llm = self._build_llm()
         if self.llm is None:
-            raise RuntimeError("OPENAI_API_KEY is required for LangGraph agent workflow.")
+            raise RuntimeError(
+                "OPENAI_API_KEY is required for LangGraph agent workflow."
+            )
         self.news_client = TavilyNewsClient()
         self.graph = self._build_graph()
 
@@ -200,13 +214,19 @@ class LangGraphSwarmWorkflow:
 
         return builder.compile()
 
-    def _route_after_critic1(self, state: SwarmState) -> Literal["research_pass2", "comparison"]:
+    def _route_after_critic1(
+        self, state: SwarmState
+    ) -> Literal["research_pass2", "comparison"]:
         if state.get("needs_revision") and not state.get("revision_used", False):
             return "research_pass2"
         return "comparison"
 
     def _node_research_pass1(self, state: SwarmState) -> SwarmState:
-        self.logger.info("agent_start agent=research_swarm pass=1 ticker=%s query=%s", state.get("ticker"), state["query"][:160])
+        self.logger.info(
+            "agent_start agent=research_swarm pass=1 ticker=%s query=%s",
+            state.get("ticker"),
+            state["query"][:160],
+        )
         result = self._run_swarm_research(
             query=state["query"],
             ticker=state.get("ticker"),
@@ -216,7 +236,9 @@ class LangGraphSwarmWorkflow:
         )
         trace = state.get("trace", [])
         trace.extend(self._trace_research_subagents(result, "pass1"))
-        trace.append({"agent": "research_swarm_pass1", "output": self._trace_research(result)})
+        trace.append(
+            {"agent": "research_swarm_pass1", "output": self._trace_research(result)}
+        )
         self.logger.info(
             "agent_done agent=research_swarm pass=1 evidence_count=%s source_counts=%s",
             len(result.get("evidence", [])),
@@ -231,7 +253,10 @@ class LangGraphSwarmWorkflow:
             candidate=state.get("pass1", {}),
             previous=None,
         )
-        needs_revision = critique.get("decision") == "REVISE_ONCE" and settings.agent_swarm_revision_max >= 1
+        needs_revision = (
+            critique.get("decision") == "REVISE_ONCE"
+            and settings.agent_swarm_revision_max >= 1
+        )
         trace = state.get("trace", [])
         trace.append({"agent": "critic_eval_pass1", "output": critique})
         self.logger.info(
@@ -248,7 +273,9 @@ class LangGraphSwarmWorkflow:
 
     def _node_research_pass2(self, state: SwarmState) -> SwarmState:
         self.logger.info("agent_start agent=research_swarm pass=2")
-        feedback = "; ".join(state.get("critique1", {}).get("required_improvements", []))
+        feedback = "; ".join(
+            state.get("critique1", {}).get("required_improvements", [])
+        )
         result = self._run_swarm_research(
             query=state["query"],
             ticker=state.get("ticker"),
@@ -258,7 +285,9 @@ class LangGraphSwarmWorkflow:
         )
         trace = state.get("trace", [])
         trace.extend(self._trace_research_subagents(result, "pass2"))
-        trace.append({"agent": "research_swarm_pass2", "output": self._trace_research(result)})
+        trace.append(
+            {"agent": "research_swarm_pass2", "output": self._trace_research(result)}
+        )
         self.logger.info(
             "agent_done agent=research_swarm pass=2 evidence_count=%s source_counts=%s",
             len(result.get("evidence", [])),
@@ -329,7 +358,9 @@ class LangGraphSwarmWorkflow:
                     "writer_model": final.get("writer_model"),
                     "token_usage": final.get("token_usage", {}),
                     "agent_token_usage": final.get("agent_token_usage", {}),
-                    "agent_estimated_cost_usd": final.get("agent_estimated_cost_usd", 0.0),
+                    "agent_estimated_cost_usd": final.get(
+                        "agent_estimated_cost_usd", 0.0
+                    ),
                     "estimated_cost_usd": final.get("estimated_cost_usd", 0.0),
                 },
             }
@@ -337,7 +368,10 @@ class LangGraphSwarmWorkflow:
         self.logger.info(
             "agent_done agent=writer model=%s total_tokens=%s estimated_cost_usd=%s",
             final.get("writer_model"),
-            (final.get("token_usage", {}) or {}).get("overall_total_tokens", (final.get("token_usage", {}) or {}).get("total_tokens")),
+            (final.get("token_usage", {}) or {}).get(
+                "overall_total_tokens",
+                (final.get("token_usage", {}) or {}).get("total_tokens"),
+            ),
             final.get("estimated_cost_usd"),
         )
         return {"final": final, "trace": trace}
@@ -350,7 +384,11 @@ class LangGraphSwarmWorkflow:
         max_evidence: int,
         feedback: Optional[str],
     ) -> dict[str, Any]:
-        base_query = query if not feedback else f"{query}. Critic feedback to address: {feedback}"
+        base_query = (
+            query
+            if not feedback
+            else f"{query}. Critic feedback to address: {feedback}"
+        )
         plan = self._plan_research(base_query, ticker)
         self.logger.info(
             "agent_plan ticker=%s filing_queries=%s facts_focus=%s news_queries=%s",
@@ -368,7 +406,11 @@ class LangGraphSwarmWorkflow:
             "agent_parallel_start ticker=%s query=%s specialists=%s",
             ticker,
             query[:160],
-            ["filing", "sec_facts", "news" if settings.agent_swarm_enable_news else "news_disabled"],
+            [
+                "filing",
+                "sec_facts",
+                "news" if settings.agent_swarm_enable_news else "news_disabled",
+            ],
         )
         with ThreadPoolExecutor(max_workers=3) as pool:
             filing_future = pool.submit(
@@ -558,11 +600,13 @@ class LangGraphSwarmWorkflow:
         user = textwrap.dedent(
             f"""
             Query: {query}
-            Ticker: {ticker or 'UNKNOWN'}
+            Ticker: {ticker or "UNKNOWN"}
             Return targeted short queries (2-3 each source) and facts focus terms.
             """
         ).strip()
-        out = planner.invoke([SystemMessage(content=system), HumanMessage(content=user)])
+        out = planner.invoke(
+            [SystemMessage(content=system), HumanMessage(content=user)]
+        )
         if not isinstance(out, ResearchPlan):
             raise RuntimeError("Research planner returned invalid output.")
         out.filing_queries = [q for q in out.filing_queries if q][:3]
@@ -571,7 +615,9 @@ class LangGraphSwarmWorkflow:
             raise RuntimeError("Research planner returned incomplete plan.")
         return out
 
-    def _filing_agent(self, query: str, ticker: Optional[str], top_k: int, variants: list[str]) -> list[dict[str, Any]]:
+    def _filing_agent(
+        self, query: str, ticker: Optional[str], top_k: int, variants: list[str]
+    ) -> list[dict[str, Any]]:
         variants = variants[:4] if variants else [query]
 
         seen: set[str] = set()
@@ -586,10 +632,17 @@ class LangGraphSwarmWorkflow:
                 rows.append(row)
 
         rows.sort(key=lambda r: float(r.get("score", 0.0)), reverse=True)
-        self.logger.info("agent_run agent=filing_retriever ticker=%s query_variants=%s selected=%s", ticker, len(variants), min(len(rows), max(1, top_k)))
+        self.logger.info(
+            "agent_run agent=filing_retriever ticker=%s query_variants=%s selected=%s",
+            ticker,
+            len(variants),
+            min(len(rows), max(1, top_k)),
+        )
         return rows[: max(1, top_k)]
 
-    def _sec_facts_agent(self, query: str, ticker: Optional[str], focus_terms: list[str]) -> list[dict[str, Any]]:
+    def _sec_facts_agent(
+        self, query: str, ticker: Optional[str], focus_terms: list[str]
+    ) -> list[dict[str, Any]]:
         if not ticker:
             return []
         cik = self.TICKER_TO_CIK.get(ticker.upper())
@@ -599,7 +652,9 @@ class LangGraphSwarmWorkflow:
         url = f"https://data.sec.gov/api/xbrl/companyfacts/CIK{int(cik):010d}.json"
         headers = {"User-Agent": settings.sec_user_agent, "Accept": "application/json"}
         try:
-            with httpx.Client(timeout=settings.news_timeout_sec, headers=headers) as client:
+            with httpx.Client(
+                timeout=settings.news_timeout_sec, headers=headers
+            ) as client:
                 resp = client.get(url)
                 resp.raise_for_status()
                 data = resp.json()
@@ -633,7 +688,9 @@ class LangGraphSwarmWorkflow:
 
             text = f"SEC Fact {tag}: {val} (period_end={end})"
             focus_blob = " ".join(focus_terms or [])
-            score = 0.78 if re.search(re.escape(tag), focus_blob, re.IGNORECASE) else 0.72
+            score = (
+                0.78 if re.search(re.escape(tag), focus_blob, re.IGNORECASE) else 0.72
+            )
             rows.append(
                 {
                     "chunk_id": f"facts-{ticker}-{tag}-{idx}",
@@ -652,15 +709,26 @@ class LangGraphSwarmWorkflow:
             if idx >= settings.agent_swarm_sec_facts_max_items:
                 break
 
-        self.logger.info("agent_run agent=sec_facts_retriever ticker=%s focus_terms=%s selected=%s", ticker, focus_terms, len(rows))
+        self.logger.info(
+            "agent_run agent=sec_facts_retriever ticker=%s focus_terms=%s selected=%s",
+            ticker,
+            focus_terms,
+            len(rows),
+        )
         return rows
 
-    def _news_agent(self, query: str, ticker: Optional[str], query_variants: list[str]) -> NewsFetchResult:
+    def _news_agent(
+        self, query: str, ticker: Optional[str], query_variants: list[str]
+    ) -> NewsFetchResult:
         if not ticker:
-            return NewsFetchResult(provider=settings.news_provider, rows=[], error="missing_ticker")
+            return NewsFetchResult(
+                provider=settings.news_provider, rows=[], error="missing_ticker"
+            )
 
         if settings.news_provider.lower() != "tavily":
-            raise RuntimeError("NEWS_PROVIDER must be 'tavily' for the current implementation.")
+            raise RuntimeError(
+                "NEWS_PROVIDER must be 'tavily' for the current implementation."
+            )
 
         merged_rows: list[dict[str, Any]] = []
         errors: list[str] = []
@@ -677,15 +745,29 @@ class LangGraphSwarmWorkflow:
                 if not key:
                     continue
                 current = dedup.get(key)
-                if current is None or float(row.get("score", 0.0)) > float(current.get("score", 0.0)):
+                if current is None or float(row.get("score", 0.0)) > float(
+                    current.get("score", 0.0)
+                ):
                     dedup[key] = row
-            rows = sorted(dedup.values(), key=lambda r: float(r.get("score", 0.0)), reverse=True)
+            rows = sorted(
+                dedup.values(), key=lambda r: float(r.get("score", 0.0)), reverse=True
+            )
             final_rows = rows[: max(1, settings.agent_swarm_news_max_items)]
-            self.logger.info("agent_run agent=news_retriever ticker=%s query_variants=%s selected=%s", ticker, len(query_variants or []), len(final_rows))
+            self.logger.info(
+                "agent_run agent=news_retriever ticker=%s query_variants=%s selected=%s",
+                ticker,
+                len(query_variants or []),
+                len(final_rows),
+            )
             return NewsFetchResult(provider="tavily", rows=final_rows, error=None)
 
         err = "; ".join(errors) if errors else "no_results"
-        self.logger.info("agent_run agent=news_retriever ticker=%s query_variants=%s selected=0 error=%s", ticker, len(query_variants or []), err)
+        self.logger.info(
+            "agent_run agent=news_retriever ticker=%s query_variants=%s selected=0 error=%s",
+            ticker,
+            len(query_variants or []),
+            err,
+        )
         return NewsFetchResult(provider="tavily", rows=[], error=err)
 
     def _run_specialist_with_logging(self, agent_name: str, fn, *args, **kwargs):
@@ -732,14 +814,16 @@ class LangGraphSwarmWorkflow:
             return []
 
         top_rows = rows[: min(20, len(rows))]
-        id_to_row = {str(r.get("chunk_id", "")): r for r in top_rows if r.get("chunk_id")}
+        id_to_row = {
+            str(r.get("chunk_id", "")): r for r in top_rows if r.get("chunk_id")
+        }
         if not id_to_row:
             raise RuntimeError(f"{agent_name} candidates do not contain chunk IDs.")
         evidence_lines = []
         for i, row in enumerate(top_rows, start=1):
             evidence_lines.append(
                 f"id={row.get('chunk_id')} source={row.get('source_type')} score={row.get('score')} "
-                f"form={row.get('form_type')} section={row.get('section_name')} preview={str(row.get('text_preview',''))[:200]}"
+                f"form={row.get('form_type')} section={row.get('section_name')} preview={str(row.get('text_preview', ''))[:200]}"
             )
         selector = self.llm.with_structured_output(EvidenceSelection)
         valid_ids = list(id_to_row.keys())
@@ -757,10 +841,12 @@ class LangGraphSwarmWorkflow:
                 Max IDs to select: {max(1, limit)}
                 Valid IDs: {valid_ids}
                 Candidates:
-                {'\n'.join(evidence_lines)}
+                {"\n".join(evidence_lines)}
                 """
             ).strip()
-            out = selector.invoke([SystemMessage(content=system), HumanMessage(content=user)])
+            out = selector.invoke(
+                [SystemMessage(content=system), HumanMessage(content=user)]
+            )
             if not isinstance(out, EvidenceSelection):
                 continue
             seen = set()
@@ -821,7 +907,9 @@ class LangGraphSwarmWorkflow:
                 "confidence": "LOW",
                 "decision": "REVISE_ONCE",
                 "summary_text": "Critic found insufficient evidence quality and requested one revision.",
-                "required_improvements": ["No evidence retrieved; broaden and re-target research queries."],
+                "required_improvements": [
+                    "No evidence retrieved; broaden and re-target research queries."
+                ],
                 "subscores": {
                     "relevance": 0.0,
                     "coverage": 0.0,
@@ -838,15 +926,15 @@ class LangGraphSwarmWorkflow:
         critic = self.llm.with_structured_output(CriticAssessment)
         evidence_preview = "\n".join(
             f"- source={e.get('source_type')} score={e.get('score')} form={e.get('form_type')} "
-            f"section={e.get('section_name')} preview={str(e.get('text_preview',''))[:180]}"
+            f"section={e.get('section_name')} preview={str(e.get('text_preview', ''))[:180]}"
             for e in evidence[:12]
         )
         crit_user = textwrap.dedent(
             f"""
             Query: {query}
-            Candidate summary: {candidate.get('candidate_summary', '')}
-            Source counts: {candidate.get('source_counts', {})}
-            Prior score: {previous.get('overall_score') if previous else 'None'}
+            Candidate summary: {candidate.get("candidate_summary", "")}
+            Source counts: {candidate.get("source_counts", {})}
+            Prior score: {previous.get("overall_score") if previous else "None"}
             Evidence preview:
             {evidence_preview}
             """
@@ -864,7 +952,9 @@ class LangGraphSwarmWorkflow:
             ]
         )
         out = crit.model_dump()
-        out["overall_score"] = round(max(0.0, min(1.0, float(out.get("overall_score", 0.0)))), 4)
+        out["overall_score"] = round(
+            max(0.0, min(1.0, float(out.get("overall_score", 0.0)))), 4
+        )
         out["subscores"] = {
             "relevance": round(float(out.pop("relevance", 0.0)), 4),
             "coverage": round(float(out.pop("coverage", 0.0)), 4),
@@ -911,8 +1001,8 @@ class LangGraphSwarmWorkflow:
             Pass2 score: {score2}
             Pass1 evidence count: {len(ev1)}
             Pass2 evidence count: {len(ev2)}
-            Pass1 summary: {pass1.get('candidate_summary', '')}
-            Pass2 summary: {pass2.get('candidate_summary', '')}
+            Pass1 summary: {pass1.get("candidate_summary", "")}
+            Pass2 summary: {pass2.get("candidate_summary", "")}
 
             Choose strategy:
             - PICK_PASS_1
@@ -970,7 +1060,11 @@ class LangGraphSwarmWorkflow:
         strategy = comparison.get("strategy", "PICK_PASS_1")
         selected = comparison.get("selected_evidence", pass1.get("evidence", []))
         chosen_score = float(comparison.get("chosen_score", 0.0))
-        confidence = "HIGH" if chosen_score >= 0.75 else ("MEDIUM" if chosen_score >= 0.5 else "LOW")
+        confidence = (
+            "HIGH"
+            if chosen_score >= 0.75
+            else ("MEDIUM" if chosen_score >= 0.5 else "LOW")
+        )
         agent_totals = self._aggregate_agent_metrics(pass1, pass2)
 
         memo, usage = self._write_with_langchain(
@@ -997,13 +1091,21 @@ class LangGraphSwarmWorkflow:
         summary = memo.splitlines()[0].strip("# ") if memo else "Agentic memo generated"
         critic_notes = [
             f"Pass1 score={critique1.get('overall_score', 0.0)}",
-            f"Pass2 score={(critique2 or {}).get('overall_score', 0.0)}" if critique2 else "Pass2 not executed",
+            f"Pass2 score={(critique2 or {}).get('overall_score', 0.0)}"
+            if critique2
+            else "Pass2 not executed",
             str(comparison.get("rationale", "")),
         ]
         combined_usage = dict(token_usage)
-        combined_usage["agent_summary_prompt_tokens"] = int(agent_totals.get("prompt_tokens", 0))
-        combined_usage["agent_summary_completion_tokens"] = int(agent_totals.get("completion_tokens", 0))
-        combined_usage["agent_summary_total_tokens"] = int(agent_totals.get("total_tokens", 0))
+        combined_usage["agent_summary_prompt_tokens"] = int(
+            agent_totals.get("prompt_tokens", 0)
+        )
+        combined_usage["agent_summary_completion_tokens"] = int(
+            agent_totals.get("completion_tokens", 0)
+        )
+        combined_usage["agent_summary_total_tokens"] = int(
+            agent_totals.get("total_tokens", 0)
+        )
         combined_usage["overall_total_tokens"] = int(
             int(combined_usage.get("total_tokens", 0))
             + int(combined_usage.get("agent_summary_total_tokens", 0))
@@ -1018,7 +1120,9 @@ class LangGraphSwarmWorkflow:
             "writer_model": settings.openai_chat_model,
             "token_usage": combined_usage,
             "agent_token_usage": agent_totals.get("by_agent", {}),
-            "agent_estimated_cost_usd": float(agent_totals.get("estimated_cost_usd", 0.0)),
+            "agent_estimated_cost_usd": float(
+                agent_totals.get("estimated_cost_usd", 0.0)
+            ),
             "estimated_cost_usd": total_cost,
         }
 
@@ -1038,7 +1142,7 @@ class LangGraphSwarmWorkflow:
         evidence_lines = []
         for i, e in enumerate(selected, start=1):
             evidence_lines.append(
-                f"[{i}] source={e.get('source_type','unknown')} ticker={e.get('ticker')} form={e.get('form_type')} "
+                f"[{i}] source={e.get('source_type', 'unknown')} ticker={e.get('ticker')} form={e.get('form_type')} "
                 f"section={e.get('section_name')} score={e.get('score')} preview={e.get('text_preview')}"
             )
 
@@ -1049,23 +1153,23 @@ class LangGraphSwarmWorkflow:
         user = textwrap.dedent(
             f"""
             Query: {query}
-            Ticker: {ticker or 'NONE'}
+            Ticker: {ticker or "NONE"}
             Strategy selected by comparison agent: {strategy}
             Pass1 summary: {pass1_summary}
             Pass2 summary: {pass2_summary}
-            Pass1 filing summary: {pass1_agent_summaries.get('filings', '')}
-            Pass1 facts summary: {pass1_agent_summaries.get('sec_facts', '')}
-            Pass1 news summary: {pass1_agent_summaries.get('news', '')}
-            Pass1 aggregator summary: {pass1_agent_summaries.get('aggregator', '')}
-            Pass2 filing summary: {pass2_agent_summaries.get('filings', '')}
-            Pass2 facts summary: {pass2_agent_summaries.get('sec_facts', '')}
-            Pass2 news summary: {pass2_agent_summaries.get('news', '')}
-            Pass2 aggregator summary: {pass2_agent_summaries.get('aggregator', '')}
-            Pass1 score: {critique1.get('overall_score', 0.0)}
-            Pass2 score: {(critique2 or {}).get('overall_score', 0.0)}
+            Pass1 filing summary: {pass1_agent_summaries.get("filings", "")}
+            Pass1 facts summary: {pass1_agent_summaries.get("sec_facts", "")}
+            Pass1 news summary: {pass1_agent_summaries.get("news", "")}
+            Pass1 aggregator summary: {pass1_agent_summaries.get("aggregator", "")}
+            Pass2 filing summary: {pass2_agent_summaries.get("filings", "")}
+            Pass2 facts summary: {pass2_agent_summaries.get("sec_facts", "")}
+            Pass2 news summary: {pass2_agent_summaries.get("news", "")}
+            Pass2 aggregator summary: {pass2_agent_summaries.get("aggregator", "")}
+            Pass1 score: {critique1.get("overall_score", 0.0)}
+            Pass2 score: {(critique2 or {}).get("overall_score", 0.0)}
 
             Evidence:
-            {'\n'.join(evidence_lines)}
+            {"\n".join(evidence_lines)}
 
             Return markdown with sections:
             1) Executive Summary (3 bullets)
@@ -1076,12 +1180,16 @@ class LangGraphSwarmWorkflow:
             """
         ).strip()
 
-        msg = self.llm.invoke([SystemMessage(content=system), HumanMessage(content=user)])
+        msg = self.llm.invoke(
+            [SystemMessage(content=system), HumanMessage(content=user)]
+        )
         content = str(msg.content or "").strip()
         usage = getattr(msg, "usage_metadata", None) or {}
         return content, usage
 
-    def _estimate_tokens(self, query: str, evidence: list[dict[str, Any]], memo: str) -> dict[str, int]:
+    def _estimate_tokens(
+        self, query: str, evidence: list[dict[str, Any]], memo: str
+    ) -> dict[str, int]:
         chars_per_token = max(1, settings.token_chars_per_token)
         evidence_chars = sum(len(str(e.get("text_preview", ""))) for e in evidence)
         prompt_tokens = max(1, (len(query) + evidence_chars) // chars_per_token)
@@ -1096,7 +1204,9 @@ class LangGraphSwarmWorkflow:
         prompt_tokens = float(token_usage.get("prompt_tokens", 0))
         completion_tokens = float(token_usage.get("completion_tokens", 0))
         in_cost = (prompt_tokens / 1000.0) * settings.openai_chat_input_cost_per_1k
-        out_cost = (completion_tokens / 1000.0) * settings.openai_chat_output_cost_per_1k
+        out_cost = (
+            completion_tokens / 1000.0
+        ) * settings.openai_chat_output_cost_per_1k
         return round(in_cost + out_cost, 6)
 
     def _confidence_score(self, confidence: str) -> float:
@@ -1106,10 +1216,16 @@ class LangGraphSwarmWorkflow:
             "HIGH": 1.0,
         }.get(str(confidence).upper(), 0.0)
 
-    def _aggregate_agent_metrics(self, pass1: dict[str, Any], pass2: Optional[dict[str, Any]]) -> dict[str, Any]:
+    def _aggregate_agent_metrics(
+        self, pass1: dict[str, Any], pass2: Optional[dict[str, Any]]
+    ) -> dict[str, Any]:
         by_agent: dict[str, dict[str, Any]] = {}
         for label, source in (("pass1", pass1), ("pass2", pass2 or {})):
-            metrics = (source or {}).get("agent_metrics", {}) if isinstance(source, dict) else {}
+            metrics = (
+                (source or {}).get("agent_metrics", {})
+                if isinstance(source, dict)
+                else {}
+            )
             if not isinstance(metrics, dict):
                 continue
             for agent_name, details in metrics.items():
@@ -1121,14 +1237,25 @@ class LangGraphSwarmWorkflow:
                     "prompt_tokens": int(usage.get("prompt_tokens", 0) or 0),
                     "completion_tokens": int(usage.get("completion_tokens", 0) or 0),
                     "total_tokens": int(usage.get("total_tokens", 0) or 0),
-                    "estimated_cost_usd": float(details.get("estimated_cost_usd", 0.0) or 0.0),
+                    "estimated_cost_usd": float(
+                        details.get("estimated_cost_usd", 0.0) or 0.0
+                    ),
                 }
         return {
             "by_agent": by_agent,
-            "prompt_tokens": sum(int(v.get("prompt_tokens", 0)) for v in by_agent.values()),
-            "completion_tokens": sum(int(v.get("completion_tokens", 0)) for v in by_agent.values()),
-            "total_tokens": sum(int(v.get("total_tokens", 0)) for v in by_agent.values()),
-            "estimated_cost_usd": round(sum(float(v.get("estimated_cost_usd", 0.0)) for v in by_agent.values()), 6),
+            "prompt_tokens": sum(
+                int(v.get("prompt_tokens", 0)) for v in by_agent.values()
+            ),
+            "completion_tokens": sum(
+                int(v.get("completion_tokens", 0)) for v in by_agent.values()
+            ),
+            "total_tokens": sum(
+                int(v.get("total_tokens", 0)) for v in by_agent.values()
+            ),
+            "estimated_cost_usd": round(
+                sum(float(v.get("estimated_cost_usd", 0.0)) for v in by_agent.values()),
+                6,
+            ),
         }
 
     def _coverage_notes(self, source_counts: dict[str, int]) -> list[str]:
@@ -1182,14 +1309,16 @@ class LangGraphSwarmWorkflow:
             f"""
             Agent: {agent_name}
             Query: {query}
-            Ticker: {ticker or 'NONE'}
+            Ticker: {ticker or "NONE"}
             Context: {extra_context}
 
             Evidence:
-            {'\n'.join(evidence_lines)}
+            {"\n".join(evidence_lines)}
             """
         ).strip()
-        msg = self.llm.invoke([SystemMessage(content=system), HumanMessage(content=user)])
+        msg = self.llm.invoke(
+            [SystemMessage(content=system), HumanMessage(content=user)]
+        )
         content = str(msg.content or "").strip()
         usage = getattr(msg, "usage_metadata", None) or {}
         token_usage = {
@@ -1218,7 +1347,9 @@ class LangGraphSwarmWorkflow:
             "estimated_cost_usd": estimated_cost,
         }
 
-    def _evidence_preview(self, rows: list[dict[str, Any]], limit: int = 3, **extras: Any) -> dict[str, Any]:
+    def _evidence_preview(
+        self, rows: list[dict[str, Any]], limit: int = 3, **extras: Any
+    ) -> dict[str, Any]:
         preview = []
         for row in rows[: max(1, limit)]:
             preview.append(
@@ -1237,7 +1368,9 @@ class LangGraphSwarmWorkflow:
         out.update(extras)
         return out
 
-    def _trace_research_subagents(self, result: dict[str, Any], pass_label: str) -> list[dict[str, Any]]:
+    def _trace_research_subagents(
+        self, result: dict[str, Any], pass_label: str
+    ) -> list[dict[str, Any]]:
         sources = result.get("source_outputs", {})
         return [
             {
@@ -1263,7 +1396,9 @@ class LangGraphSwarmWorkflow:
             "candidate_summary": result.get("candidate_summary"),
             "source_counts": result.get("source_counts", {}),
             "research_plan": result.get("research_plan", {}),
-            "summary_text": result.get("agent_summaries", {}).get("aggregator", result.get("candidate_summary", "")),
+            "summary_text": result.get("agent_summaries", {}).get(
+                "aggregator", result.get("candidate_summary", "")
+            ),
             "coverage_notes": result.get("coverage_notes", []),
             "evidence_count": len(result.get("evidence", [])),
         }

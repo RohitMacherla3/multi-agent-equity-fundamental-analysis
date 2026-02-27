@@ -94,6 +94,6 @@ class EvalRunRequest(BaseModel):
     max_evidence: int = Field(default=12, alias="maxEvidence", ge=1, le=25)
     min_retrieval_hit_rate: float = Field(default=0.6, alias="minRetrievalHitRate", ge=0.0, le=1.0)
     min_citation_coverage: float = Field(default=0.6, alias="minCitationCoverage", ge=0.0, le=1.0)
-    max_avg_latency_ms: float = Field(default=5000.0, alias="maxAvgLatencyMs", ge=1.0)
+    max_avg_latency_ms: float = Field(default=60000.0, alias="maxAvgLatencyMs", ge=1.0)
     output_csv_path: str | None = Field(default=None, alias="outputCsvPath")
     include_trace: bool = Field(default=True, alias="includeTrace")

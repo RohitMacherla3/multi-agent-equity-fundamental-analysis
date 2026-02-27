@@ -129,6 +129,24 @@ services/ai-research-team-service/.venv/bin/python \
 services/ai-research-team-service/test/run_ten_ticker_ten_prompt_eval.py
 ```
 
+## Demo UI Screenshots
+
+### Indexing Pipeline
+![Indexing Pipeline](docs/images/indexing-pipeline.png)
+
+### Agentic Analysis
+![Agentic Analysis](docs/images/agentic-analysis.png)
+
+### Result
+![Result](docs/images/result.png)
+
+### Report
+![Report](docs/images/report.png)
+
+📄 **Sample PDF Report:** [NVDA — mefa_NVDA_20260227_195409.pdf](data/results/NVDA/mefa_NVDA_20260227_195409.pdf)
+
+---
+
 ## Evaluation Visual Outputs
 ![KPI Dashboard](data/eval-reports/assets/evaluation_kpi_dashboard_option_c.svg)
 

@@ -26,10 +26,11 @@ class TavilyNewsClient:
 
     def fetch(self, query: str, ticker: str) -> NewsFetchResult:
         if not self.api_key:
-            return NewsFetchResult(provider="tavily", rows=[], error="tavily_api_key_missing")
+            return NewsFetchResult(
+                provider="tavily", rows=[], error="tavily_api_key_missing"
+            )
 
         payload = {
-            "api_key": self.api_key,
             "query": query,
             "search_depth": "advanced",
             "topic": "news",
@@ -39,14 +40,38 @@ class TavilyNewsClient:
             "include_images": False,
             "days": self.recency_days,
         }
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+        }
 
         try:
             with httpx.Client(timeout=self.timeout_sec) as client:
-                response = client.post(self.endpoint, json=payload)
+                response = client.post(self.endpoint, json=payload, headers=headers)
+                if response.status_code == 401:
+                    return NewsFetchResult(
+                        provider="tavily",
+                        rows=[],
+                        error="tavily_invalid_api_key (401 Unauthorized)",
+                    )
+                if response.status_code == 429:
+                    return NewsFetchResult(
+                        provider="tavily",
+                        rows=[],
+                        error="tavily_rate_limited (429 Too Many Requests)",
+                    )
+                if response.status_code == 432:
+                    return NewsFetchResult(
+                        provider="tavily",
+                        rows=[],
+                        error=f"tavily_rejected (432 — check TAVILY_API_KEY): {response.text[:200]}",
+                    )
                 response.raise_for_status()
                 data = response.json()
         except Exception as exc:
-            return NewsFetchResult(provider="tavily", rows=[], error=f"tavily_request_failed:{exc}")
+            return NewsFetchResult(
+                provider="tavily", rows=[], error=f"tavily_request_failed:{exc}"
+            )
 
         items = data.get("results", []) if isinstance(data, dict) else []
         rows: list[dict[str, Any]] = []
@@ -77,4 +102,3 @@ class TavilyNewsClient:
             )
 
         return NewsFetchResult(provider="tavily", rows=rows)
-

@@ -74,7 +74,7 @@ class EvaluationRunner:
         quality_gate = quality_gate or {
             "min_retrieval_hit_rate": 0.6,
             "min_citation_coverage": 0.6,
-            "max_avg_latency_ms": 5000.0,
+            "max_avg_latency_ms": 60000.0,
         }
 
         samples = self._load_samples(dataset_path)

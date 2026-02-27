@@ -1,22 +1,22 @@
 [project]
-name = "ifip-ai-analysis-service"
+name = "mefa-equity-fundamental-analysis-service"
 version = "0.1.0"
 description = "Python AI analysis service for Multi-Agent Equity Fundamental Analysis"
 requires-python = ">=3.11"
 dependencies = [
-  "fastapi",
-  "uvicorn",
-  "pydantic",
-  "httpx",
-  "beautifulsoup4",
-  "numpy",
-  "python-dotenv",
-  "chromadb",
-  "langchain",
-  "langgraph",
-  "langchain-openai",
-  "streamlit>=1.54.0",
-  "reportlab>=4.4.10",
+    "beautifulsoup4>=4.14.3",
+    "chromadb>=1.5.1",
+    "fastapi>=0.133.1",
+    "httpx>=0.28.1",
+    "langchain>=1.2.10",
+    "langchain-openai>=1.1.10",
+    "langgraph>=1.0.9",
+    "numpy>=2.4.2",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.1",
+    "reportlab>=4.0.0",
+    "streamlit>=1.54.0",
+    "uvicorn>=0.41.0",
 ]
 
 [tool.uv]

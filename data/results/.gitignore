@@ -1,0 +1,3 @@
+# Ignore all generated PDFs except the committed sample reports
+**/*.pdf
+!NVDA/mefa_NVDA_20260227_195409.pdf

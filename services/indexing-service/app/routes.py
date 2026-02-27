@@ -11,7 +11,7 @@ router = APIRouter()
 
 def _forward_get(path: str, params: dict | None = None) -> dict:
     url = f"{settings.ai_research_url.rstrip('/')}{path}"
-    with httpx.Client(timeout=settings.timeout_sec) as client:
+    with httpx.Client(timeout=settings.timeout_sec, verify=False) as client:
         resp = client.get(url, params=params)
     if resp.status_code >= 400:
         raise HTTPException(status_code=resp.status_code, detail=resp.text)
@@ -20,7 +20,7 @@ def _forward_get(path: str, params: dict | None = None) -> dict:
 
 def _forward_post(path: str, payload: dict) -> dict:
     url = f"{settings.ai_research_url.rstrip('/')}{path}"
-    with httpx.Client(timeout=settings.timeout_sec) as client:
+    with httpx.Client(timeout=settings.timeout_sec, verify=False) as client:
         resp = client.post(url, json=payload)
     if resp.status_code >= 400:
         raise HTTPException(status_code=resp.status_code, detail=resp.text)
